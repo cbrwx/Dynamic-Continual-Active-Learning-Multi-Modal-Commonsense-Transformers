@@ -33,9 +33,9 @@ Here's an example of how the CSV file should be formatted:
 text,label
 "Once upon a time, in a faraway land, there was a young prince.",0
 "The prince was kind and generous to all the people in his kingdom.",0
-"The kingdom was protected by a fierce dragon that lived in a cave.",1
-"Many brave knights tried to defeat the dragon, but all of them failed.",1
-"The prince decided to embark on a journey to find a way to defeat the dragon.",0
+"The kingdom was protected by a fierce troglodyte that lived in a moist cave.",1
+"Many brave knights tried to defeat the troglodyte, but all of them failed.",1
+"The prince decided to embark on a journey to find a way to remove the moistness from the cave.",0
 ```
 In this example, the 'text' column contains sentences, while the 'label' column contains binary labels (0 or 1). Depending on your specific task, the labels can be integers, strings, or other formats. Just make sure to update the CsvDataset class accordingly to handle the label type you are using.
 
