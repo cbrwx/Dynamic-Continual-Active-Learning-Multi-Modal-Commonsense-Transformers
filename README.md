@@ -36,6 +36,7 @@ text,label
 "The kingdom was protected by a fierce troglodyte that lived in a moist cave.",1
 "Many brave knights tried to defeat the troglodyte, but all of them failed.",1
 "The prince decided to embark on a journey to find a way to remove the moistness from the cave.",0
+"Science; the satisfactory philosophy of ignorance.",1
 ```
 In this example, the 'text' column contains sentences, while the 'label' column contains binary labels (0 or 1). Depending on your specific task, the labels can be integers, strings, or other formats. Just make sure to update the CsvDataset class accordingly to handle the label type you are using.
 
@@ -189,6 +190,6 @@ The CommonsenseReasoner class extends the DynamicTransformer class and is design
 # ActiveLearner
 The ActiveLearner class extends the DynamicTransformer class and is designed for active learning. It implements a select_data_points method that selects the most informative data points from the data pool using entropy as the uncertainty measure. In the main function, the data pool is loaded, the most informative data points are selected, and the model is trained using the selected data points. The model is saved after training.
 
-In this repository im trying to provide a comprehensive implementation of a Dynamic Transformer model that aims to cover various learning scenarios, such as continual learning, multi-modal learning, commonsense reasoning, and active learning. Developed using PyTorch, the model can be customized and extended to cater to specific requirements. The code is designed to be easily adaptable, featuring examples of how to use different learner classes, modify dataset formats, and create custom categories and labels. This versatile and capable implementation aspires to assist in rapidly developing and experimenting with new learning techniques, ultimately contributing to the creation of more robust and intelligent models capable of tackling complex real-world problems.
+In this repository im trying to provide a comprehensive implementation of a Dynamic Transformer model that aims to cover various learning scenarios, such as continual learning, multi-modal learning, commonsense reasoning, and active learning. Developed using PyTorch, the model can be customized and extended to cater to specific requirements. The code is designed to be easily adaptable, featuring examples of how to use different learner classes, modify dataset formats, and create custom categories and labels. This versatile and capable implementation aspires to assist in rapidly developing and experimenting with new learning techniques, ultimately contributing to the creation of more robust and intelligent models capable of tackling complex real-world problems. 
 
 .cbrwx
