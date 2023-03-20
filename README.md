@@ -55,7 +55,7 @@ The dataset can be tailored to any classification task by simply adjusting the l
 ```
 text,label
 "I love this product!",positive
-"This is the worst purchase I have ever made, that kebab was oddly spicey.",negative
+"This is the worst purchase I have ever made, and this kebab was oddly spicey.",negative
 "I had an amazing time at the park.",positive
 "I just shit myself.",negative
 ```
