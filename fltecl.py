@@ -156,8 +156,37 @@ class MetaLearner:
         self.train_with_scheduler(data, n_epochs, scheduler)
 
     def train_with_scheduler(self, data: Dataset, n_epochs: int, scheduler):
-        # Implement your preferred training loop with scheduler.step() here
-        pass
+        criterion = nn.BCEWithLogitsLoss()
+        dataloader = torch.utils.data.DataLoader(data, batch_size=64, shuffle=True)
+
+        device = next(self.model.parameters()).device
+
+        for epoch in range(n_epochs):
+            self.model.train()
+            total_loss = 0
+            num_batches = 0
+
+            for inputs, targets in dataloader:
+                inputs, targets = inputs.to(device), targets.to(device)
+
+                self.optimizer.zero_grad()
+                outputs = self.model(inputs)
+                loss = criterion(outputs.view(-1), targets.float())
+                loss.backward()
+                self.optimizer.step()
+
+                total_loss += loss.item()
+                num_batches += 1
+
+            # Update the learning rate based on the scheduler
+            if isinstance(scheduler, torch.optim.lr_scheduler.ReduceLROnPlateau):
+                scheduler.step(total_loss / num_batches)
+            else:
+                scheduler.step()
+
+            # You may want to print the epoch and average loss for each epoch
+            print(f"Epoch: {epoch + 1}/{n_epochs}, Average Loss: {total_loss / num_batches:.4f}")
+
 
 class ContinualLearner(DynamicTransformer):
     def __init__(self, config):
